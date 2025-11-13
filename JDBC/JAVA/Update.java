@@ -4,28 +4,29 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class ExemploUpdate {
+public class Update {
 
 	public static void main(String[] args) {
 
 		String url = "jdbc:mysql://localhost/escola";
-		String usuario = "root";
-		String senha = "123456";
+		String usuario = "20231164010027";
+		String senha = "20231164010027+lima";
 
-		String sql = "update aluno set curso = ? where matricula = ?";
+
+		String sql = "update produto set valor = ? where id = ?";
 
 		try (Connection conexao = DriverManager.getConnection(url, usuario, senha);
 				PreparedStatement stmt = conexao.prepareStatement(sql);
 				Scanner leitor = new Scanner(System.in)) {
 
-			System.out.print("Digite o novo curso: ");
-			var novo_curso = leitor.nextLine();
+			System.out.print("Digite o novo valor do produto: ");
+			var novo_valor = leitor.nextDouble();
 
-			System.out.print("Digite a matrícula da busca: ");
-			var matricula = leitor.nextInt();
+			System.out.print("Digite o ID da busca: ");
+			var buscaId = leitor.nextInt();
 
-			stmt.setString(1, novo_curso);
-			stmt.setInt(2, matricula);
+			stmt.setDouble(1, novo_valor);
+			stmt.setInt(2, buscaId);
 
 			var linhas = stmt.executeUpdate();
 			System.out.println("Linhas afetadas = " + linhas);
@@ -33,7 +34,7 @@ public class ExemploUpdate {
 			if (linhas > 0) {
 				System.out.println("Atualização realizada com sucesso!");
 			} else {
-				System.out.println("Matrícula não encontrada!");
+				System.out.println("ID não encontrado!");
 			}
 
 		} catch (SQLException e) {
