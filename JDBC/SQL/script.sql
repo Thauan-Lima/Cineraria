@@ -1,17 +1,50 @@
-drop database if exists escola;
-create database escola;
-
-use escola;
-
-create table aluno (
-    id int primary key not null auto_increment,
-    nome varchar(50) check(length(nome) >= 5) not null,
-    matricula int check(matricula between 1000 and 9999) unique not null,
-    ira decimal(4,2) check(ira between 0 and 10) not null,
-    curso varchar(50) not null default 'Informática',
-    sexo enum('M', 'F') not null,
-    nascimento date not null,
-    cadastro datetime not null default now()
+CREATE DATABASE 20231164010027_MANIPULA_PRODUTO;
+USE 20231164010027_MANIPULA_PRODUTO;
+CREATE TABLE PRODUTO(
+	ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    NOME VARCHAR(20) NOT NULL,
+    VALOR DECIMAL(4,2) NOT NULL,
+    QUANTIDADE INT NOT NULL,
+    MEDIDA VARCHAR(10) NOT NULL
 );
 
-select * from aluno;
+INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA) 
+VALUES ("ARROZ", 1.90, 33, "KG");
+
+INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
+ VALUES ("FEIJÃO", 3.85, 82, "KG");
+ 
+INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
+ VALUES ("MIOJO", 1.20, 22, "UNIDADE");
+ 
+INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
+ VALUES ("TOMATE", 3.05, 128, "KG");
+ 
+INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
+ VALUES ("CENOURA", 2.50, 173, "KG");
+ 
+INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
+ VALUES ("BATATA", 2.38, 74, "KG");
+ 
+INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
+ VALUES ("PÃO", 10.25, 570, "G");
+ 
+INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
+ VALUES ("QUEIJO", 12.50, 120, "KG");
+ 
+INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
+ VALUES ("ÁGUA", 2.21, 88, "L");
+ 
+ SET SQL_SAFE_UPDATES = 0;
+
+UPDATE PRODUTO
+SET QUANTIDADE = 100 
+WHERE MEDIDA = 'KG';
+
+DELETE FROM PRODUTO 
+WHERE VALOR <= 2 OR QUANTIDADE < 90;
+
+UPDATE PRODUTO 
+SET VALOR = 2 * VALOR;
+
+SELECT * FROM PRODUTO;
