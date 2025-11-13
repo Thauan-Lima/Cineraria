@@ -1,50 +1,51 @@
-CREATE DATABASE 20231164010027_MANIPULA_PRODUTO;
-USE 20231164010027_MANIPULA_PRODUTO;
-CREATE TABLE PRODUTO(
-	ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    NOME VARCHAR(20) NOT NULL,
-    VALOR DECIMAL(4,2) NOT NULL,
-    QUANTIDADE INT NOT NULL,
-    MEDIDA VARCHAR(10) NOT NULL
+create database 20231164010027_manipula_produto;
+use 20231164010027_manipula_produto;
+
+create table produto (
+    id int not null primary key auto_increment,
+    nome varchar(20) not null,
+    valor decimal(4,2) not null,
+    quantidade int not null,
+    medida varchar(10) not null
 );
 
-INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA) 
-VALUES ("ARROZ", 1.90, 33, "KG");
+insert into produto (nome, valor, quantidade, medida) 
+values ("arroz", 1.90, 33, "kg");
 
-INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
- VALUES ("FEIJÃO", 3.85, 82, "KG");
+insert into produto (nome, valor, quantidade, medida)
+values ("feijão", 3.85, 82, "kg");
  
-INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
- VALUES ("MIOJO", 1.20, 22, "UNIDADE");
+insert into produto (nome, valor, quantidade, medida)
+values ("miojo", 1.20, 22, "unidade");
  
-INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
- VALUES ("TOMATE", 3.05, 128, "KG");
+insert into produto (nome, valor, quantidade, medida)
+values ("tomate", 3.05, 128, "kg");
  
-INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
- VALUES ("CENOURA", 2.50, 173, "KG");
+insert into produto (nome, valor, quantidade, medida)
+values ("cenoura", 2.50, 173, "kg");
  
-INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
- VALUES ("BATATA", 2.38, 74, "KG");
+insert into produto (nome, valor, quantidade, medida)
+values ("batata", 2.38, 74, "kg");
  
-INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
- VALUES ("PÃO", 10.25, 570, "G");
+insert into produto (nome, valor, quantidade, medida)
+values ("pão", 10.25, 570, "g");
  
-INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
- VALUES ("QUEIJO", 12.50, 120, "KG");
+insert into produto (nome, valor, quantidade, medida)
+values ("queijo", 12.50, 120, "kg");
  
-INSERT INTO PRODUTO (NOME, VALOR, QUANTIDADE, MEDIDA)
- VALUES ("ÁGUA", 2.21, 88, "L");
+insert into produto (nome, valor, quantidade, medida)
+values ("água", 2.21, 88, "l");
  
- SET SQL_SAFE_UPDATES = 0;
+set sql_safe_updates = 0;
 
-UPDATE PRODUTO
-SET QUANTIDADE = 100 
-WHERE MEDIDA = 'KG';
+update produto
+set quantidade = 100 
+where medida = 'kg';
 
-DELETE FROM PRODUTO 
-WHERE VALOR <= 2 OR QUANTIDADE < 90;
+delete from produto 
+where valor <= 2 or quantidade < 90;
 
-UPDATE PRODUTO 
-SET VALOR = 2 * VALOR;
+update produto 
+set valor = 2 * valor;
 
-SELECT * FROM PRODUTO;
+select * from produto;
