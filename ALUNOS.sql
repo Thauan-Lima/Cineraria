@@ -3,8 +3,8 @@ use 20231164010027_ALUNOS;
 
 CREATE TABLE aluno (
     numero INT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    curso VARCHAR(100) NOT NULL,
+    nome VARCHAR(49) NOT NULL,
+    curso VARCHAR(36) NOT NULL,
     nota1 DOUBLE NOT NULL,
     nota2 DOUBLE NOT NULL,
     nota3 DOUBLE NOT NULL,
