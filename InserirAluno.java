@@ -8,9 +8,9 @@ public class InserirAluno {
 
     public static void main(String[] args) {
 
-                String url = "jdbc:mysql://10.225.0.4:3306/20231164010027_manipula_produto";
-                String usuario = "20231164010027";
-                String senha = "20231164010027+lima";;
+         String url = "jdbc:mysql://10.225.0.4:3306/20231164010027_Aluno";
+        String usuario = "20231164010027";
+        String senha = "20231164010027+lima";;
 
         String sql = "INSERT INTO aluno (numero, nome, curso, nota1, nota2, nota3, nota4) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?)";
