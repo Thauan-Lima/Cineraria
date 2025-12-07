@@ -8,9 +8,9 @@ public class ListarAluno {
 
     public static void main(String[] args) {
 
-        String url = "jdbc:mysql://localhost:3306/escola";
-        String usuario = "root";
-        String senha = "1234";
+         String url = "jdbc:mysql://10.225.0.4:3306/20231164010027_Aluno";
+        String usuario = "20231164010027";
+        String senha = "20231164010027+lima";
 
         String sql = "SELECT * FROM aluno";
 
