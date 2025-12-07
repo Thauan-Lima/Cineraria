@@ -1,6 +1,5 @@
-CREATE DATABASE escola;
-
-USE escola;
+create database 20231164010027_ALUNOS;
+use 20231164010027_ALUNOS;
 
 CREATE TABLE aluno (
     numero INT PRIMARY KEY,
