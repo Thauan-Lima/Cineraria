@@ -10,7 +10,7 @@ public class InserirAluno {
 
         String url = "jdbc:mysql://localhost:3306/escola";
         String usuario = "root";
-        String senha = "1234";
+        String senha = "20231164010027+lima";
 
         String sql = "INSERT INTO aluno (numero, nome, curso, nota1, nota2, nota3, nota4) " +
                      "VALUES (?, ?, ?, ?, ?, ?, ?)";
